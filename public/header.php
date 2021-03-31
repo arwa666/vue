@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
+<html lang="en" dir="ltr">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -19,18 +20,6 @@
     <!-- <link rel="stylesheet" href="lib/responsive-bs-tabs-dropdown/dist/css/responsive-tabs.css"> -->
     <!-- Main css file -->
     <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!--Jquery-->
-    <script src="lib/js/jquery-3.5.1.js"></script>
-    <!--Bootstrap-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Main JS File -->
-    <script src="js/main.js"></script>
-  </body>
-</html>
+</head>
+
+<body>

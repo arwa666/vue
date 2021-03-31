@@ -1,0 +1,235 @@
+
+.page-header {
+    position: fixed; 
+    top: 0mm;
+    width: 100%;
+    background-color:white;
+   
+    left:0px;
+}
+
+
+
+.end-of-page{
+    background-color: #31AC6A;
+    height:77px;
+    margin-top:20px;
+    width:100%;
+    left:0px;
+    -webkit-print-color-adjust: exact;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.page-footer{
+    font-family:"Open Sans";
+    font-size:12px;
+    position: fixed;
+    background-color:white;
+    bottom: 0;
+    width: 100%;
+    left:0px;
+}
+.page-header-space{
+    height: 132px; 
+}
+.page-footer-space{
+    
+     height:77px;
+}
+.page {
+    page-break-after: always;
+  }
+
+
+
+@page {
+    margin: 20mm
+  }
+
+@media print {
+    thead {display: table-header-group;} 
+    tfoot {display: table-footer-group;}
+}
+.home-header {
+    background-color: #4B1D4B;
+    height: 132px;
+    line-height: 100px;
+    -webkit-print-color-adjust: exact;
+  }
+
+  footer .container p {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: #212529;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+  .page-header .home-header .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .heading-doc{
+    margin-top: 55px;
+    margin-bottom: 50px;
+    color: #31AC6A;
+    font-family: 'Almarai', sans-serif;
+    font-weight: 700;
+    text-align: start;
+  }
+  .request-delivary{
+    font-family: 'Almarai', sans-serif;
+    font-size: 33.76px;
+    color: #361336;
+    font-weight: 800;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 60px;
+  }
+  .container-table{
+    width:100%;
+    -webkit-print-color-adjust: exact;
+    padding-bottom: 45px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 70px;
+    background-color: #F5F5F5;
+    text-align: center;
+ 
+  }
+  .info-table{
+      width:100%;
+      padding-left:50px;
+      padding-right: 50px;
+      margin-left:auto;
+      margin-right:auto;
+      border-collapse: separate;
+  }
+ .ar-head{
+    font-family: 'Almarai', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #666666;
+    border-radius: 5px; 
+    width:260px;
+    /* border-radius: 5px;
+    -webkit-border-radius: 5px;
+   
+    border: 1px solid #707070;
+    width:25%; */
+ }
+ .content{
+    height: 60px;
+    background-color: #fff;
+    /* border: 1px solid #BFBFBF; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+
+    width: 50%;
+    /* margin-bottom: 20px; */
+    text-align: center;
+   
+    /* border-radius: 5px; */
+   
+ }
+ .en-head{
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    color: #fff;
+    font-weight: 500;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #666666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:260px;
+ }
+ .info-table td{
+      border:5px solid #F5F5F5;
+      border-radius: 11px;
+      -webkit-border-radius: 11px;
+      -moz-border-radius: 11px;
+      -ms-border-radius: 11px;
+      -o-border-radius: 11px;
+}
+ .padding-bottom-70{
+     padding-bottom:70px;
+ }
+
+ .height-50px{
+   height: 50px;
+ }
+
+ .svg-img{
+   padding-top:60px;
+ }
+
+ .en-header-print{
+  font-family: 'Poppins', sans-serif;
+  font-size: 33.95px;
+  color: #4B1D4B;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+ }
+ .ar-header-print{
+  font-family: 'Almarai', sans-serif;
+  font-size: 33.76px;
+  color: #361336;
+  font-weight: 800;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  text-align: center;
+ }
+ .en-p-print{
+  font-family: 'Poppins', sans-serif;
+  font-size: 23px;
+  color: #000;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  padding-left:50px;
+  padding-right: 50px;
+ }
+
+ .ar-p-print{
+  font-family: 'Almarai', sans-serif;
+  font-size: 23px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 50px;
+  padding-left:50px;
+  padding-right: 50px;
+ }
+
+ .en-print{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top:40px;
+ }
+ .ar-print{
+  font-family: 'Almarai', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+ }
