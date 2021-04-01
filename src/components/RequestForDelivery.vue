@@ -2,17 +2,27 @@
   <section class="documents container">
     <h1 class="main-h">Driving licenses and Travel Documents Delivery</h1>
     <div class="dot-nav">
-        <a href="/" class="active">
+    
+        <router-link to="/" class="active">
+           <a>
             Delivery Order 
-        </a>
-        <a href="/address_contact">
+            </a>
+        </router-link>
+        <router-link to="/address_contact">
+           <a>
             Address & Contact
-        </a>
-        <a href="/conformation">
-            Confirmation </a>
-        <a href="/receipt">
+           </a>
+        </router-link>
+        <router-link to="/conformation">
+           <a>
+            Confirmation 
+            </a>
+        </router-link>
+        <router-link to="/receipt">
+            <a>
             Receipt
-        </a>
+            </a>
+        </router-link>
         <span></span>
     </div>
 
