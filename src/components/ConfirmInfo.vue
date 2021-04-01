@@ -4,17 +4,26 @@
     <h1 class="main-h">Driving licenses and Travel Documents Delivery</h1>
 
        <div class="dot-nav">
-                <a href="/" class="active">
-                    Delivery Order 
-                </a>
-                <a href="/address_contact">
-                    Address & Contact
-                </a>
-                <a href="/conformation">
-                    Confirmation </a>
-                <a href="/receipt">
-                    Receipt
-                </a>
+            <router-link to="/" class="active">
+         
+            Delivery Order 
+           
+            </router-link>
+            <router-link to="/address_contact">
+          
+              Address & Contact
+           
+            </router-link>
+            <router-link to="/conformation">
+           
+              Confirmation 
+            
+            </router-link>
+            <router-link to="/receipt">
+           
+             Receipt
+           
+            </router-link>
                 <span></span>
         </div>
     <div class="ueliver9-page-content">
