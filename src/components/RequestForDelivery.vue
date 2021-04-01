@@ -4,24 +4,24 @@
     <div class="dot-nav">
     
         <router-link to="/" class="active">
-           <a>
+         
             Delivery Order 
-            </a>
+           
         </router-link>
         <router-link to="/address_contact">
-           <a>
+          
             Address & Contact
-           </a>
+           
         </router-link>
         <router-link to="/conformation">
-           <a>
+           
             Confirmation 
-            </a>
+            
         </router-link>
         <router-link to="/receipt">
-            <a>
+           
             Receipt
-            </a>
+           
         </router-link>
         <span></span>
     </div>
