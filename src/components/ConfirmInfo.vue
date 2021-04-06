@@ -31,6 +31,7 @@
 
 
       <form class="ueliver9-form"  @submit.prevent = "hello">
+         
         <div class="row" style="margin-left: 0px; margin-right: 0px">
           <div class="col-md-3 col-4 hide-content-en" style="padding-inline-start: 0px">
             <div class="ar-list list-unstyled">
@@ -172,9 +173,10 @@
             </div>
          </a>
         <div class="pay">
-        <input type="submit" value="Pay">
+       <input type="submit" value="Pay" >
       </div>
       </div>
+      
       </form>
      
     

@@ -7,7 +7,8 @@
    <!-- <train  
    header="This information are passed from the parent component"
    text="Vue is very interesting"
-   :detailes = bindedProps
+   :newHeader= "value"
+   theme ="red"
    /> -->
     <Footer />
   </div>
@@ -23,12 +24,13 @@ export default {
   name: 'App',
   components: {
       AppHeader,
+    
        Footer
       
   }, 
   data(){
    return{
-      bindedProps:"This is binded props"
+      value:"this is binded Header"
    }
   }
 }
@@ -43,6 +45,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
 <!-- 
      Template Refs allow us to store a refrerence to a DOM Element inside a variable

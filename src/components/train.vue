@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="position:relative">
 <h1>
      Hello {{ firstName }}
 
@@ -83,7 +83,28 @@
 <hr/>
 <h1>{{header}}</h1>
 <p> {{ text }} </p>
-<span style="color:red">{{bindedProps}}</span>
+<h1 :class ="{ redColor : theme ==='red'}">{{newHeader}}</h1>
+<div class="modal-box">
+   <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 </template>
 
@@ -168,7 +189,8 @@ export default {
   //We have to register the props that are passed from the parent component
   props: ['header',
           'text',
-          'bindedProps']
+           'newHeader',
+           'theme']
 }
 </script>
 
@@ -213,6 +235,29 @@ export default {
         border:1px solid #eee;
         background-color:pink;
        
+    }
+    .redColor{
+        color:red;
+    }
+    .modal-box{
+        position:absolute;
+        width:100%;
+        Height:100%;
+        background-color: rgba(0,0,0,0.5);
+        top:0;
+        left:0;
+    }
+    .modal{
+        width:400px;
+        height:400px;
+        /* background-color:#fff; */
+        border-radius: 5px;
+        position:fixed;
+        top:34%;
+        left:34%;
+        transform:translate(34%,34%);
+        display:block;
+        opacity:1;
     }
 </style>
 <!-- first challenge -->

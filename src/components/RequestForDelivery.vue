@@ -29,12 +29,14 @@
     <div class="document-content">
         <form @submit.prevent = "submitForm">
       
-            <div>
+           <div class="first-row">
+                <div>
                 <p> Civil ID</p>
                 <input  v-model= "civilId" type="number" />
-                <span v-if ="!$v.civilId.required && $v.civilId.$dirty" class="text-danger">This field is required</span>
+                
+                <span v-if ="(!$v.civilId.required && $v.civilId.$dirty)  " class="text-danger">This field is required</span>
                  <span v-if ="(!$v.civilId.minLength || !$v.civilId.maxLength) && $v.civilId.$dirty" class="text-danger">
-                     Civil ID must be between {{ $v.civilId.minLength.min }} and {{ $v.civilId.maxLength.max }}
+                     Civil ID must be between 3 and 5
                      characters
                  </span>
             </div>
@@ -70,10 +72,8 @@
             </div>
 
             <input type="submit" class="btn add" value="Add">
-        </form>
-       
-
-        <table>
+           </div>
+              <table>
             <thead>
                 <tr>
                     <th scope="col">SN</th>
@@ -100,7 +100,21 @@
                 </tr>
             </tbody>
         </table>
-        <button class="document-next">NEXT</button>
+         <!-- <button class="document-next">NEXT</button> -->
+        <router-link
+         to='/address_contact'
+          class="document-next" 
+           @click.native = "submitForm"
+           :disabled="!disabled" 
+           :event="disabled ? 'click' : ''"
+            >
+           NEXT
+           </router-link>
+        </form>
+       
+
+      
+       
 
     </div>
     <p class="paraFooter">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga cupiditate alias ipsum voluptatibus</p>
@@ -117,11 +131,16 @@ export default {
    submitForm(){
        this.$v.$touch()
        if (this.$v.$invalid) {
-           console.log()
-      } 
+           console.log("disabled is true")
+           this.disabled = true
+      } else{
+           this.disabled = false
+      }
+      console.log("I am clicked")
    }
   },
   data:()=>({
+      disabled:false,
       civilId:'',
       documentType:'',
       receiptNumber:''
@@ -165,5 +184,39 @@ option{
 .form-control:focus{
     border-color:transparent;
     box-shadow: none;
+}
+.documents .document-content form {
+   
+    flex-direction: column;
+}
+.first-row{
+    display: flex;
+    width:100%!important;
+    justify-content: space-between;
+}
+.documents .document-content form .first-rowiv:first-child {
+    width: 30%;
+}
+
+/***********fix the widths */
+.documents .document-content form .first-row div:first-child input {
+    width: 100%;
+    border-radius: 5px;
+}
+.documents .document-content form  .first-row div:nth-child(3) input {
+    width: 100%;
+}
+.documents .document-content form .first-row .add {
+    width: 10%;
+    background-color: #666666;
+    height: 50px;
+    font-size: 18px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 </style>
