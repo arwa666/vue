@@ -26,48 +26,47 @@
             </div>
 
     <div class="delivery-content">
-        <form action="">
+        <form  @submit.prevent = "submitForm">
             <div class="delivery-content-one">
                 <div class="delivery-one-info row">
                     <div class="col-12 col-md-4">
                         <p>Name</p>
-                        <input type='number'>
+                        <input  v-model= "name" type="text" />
+                        <span v-if ="!$v.name.required && $v.name.$dirty" class="text-danger">This field is required</span>
                     </div>
 
                     <div class="col-12  col-md-4">
                         <p>Delivery Period </p>
-                        <div class="dropdown" id="dropdown-2">
-                            <button type="button" class="btn dropdown-toggle btn2" data-toggle="dropdown">
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"> lorem ipsum </a>
-                                <a class="dropdown-item" href="#"> lorem ipsum</a>
-                            </div>
-                        </div>
+                  
+                        <select v-model= "deliveryPeriod" class=" form-control btn2">
+                            <option value="option1">Option1</option>
+                             <option value="option2">Option2</option>
+                        </select>
+                        <span v-if ="!$v.deliveryPeriod.required && $v.deliveryPeriod.$dirty" class="text-danger">This field is required</span>
                     </div>
 
                     <div class="col-12  col-md-4">
                         <p>Phone Number</p>
-                        <input type='number'>
+                        <input  v-model= "phoneNumber" type="text" />
+                        <span v-if ="!$v.phoneNumber.required && $v.phoneNumber.$dirty" class="text-danger">This field is required</span>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12  col-md-4">
                         <p>Email Adderss</p>
-                        <input type="email" name="" id="">
+                        <input  v-model= "emailAddress" type="email" />
+                        <span v-if ="!$v.emailAddress.required && $v.emailAddress.$dirty" class="text-danger">This field is required</span>
+                         <span v-if ="!$v.emailAddress.email && $v.emailAddress.$dirty" class="text-danger">This field must be an email</span>
                     </div>
 
                     <div class="col-12  col-md-4 col-lg-3">
                         <p>Preffered Language</p>
-                        <div class="dropdown" id="dropdown-3">
-                            <button type="button" class="btn dropdown-toggle btn3" data-toggle="dropdown">
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"> lorem ipsum </a>
-                                <a class="dropdown-item" href="#"> lorem ipsum</a>
-                            </div>
-                        </div>
+                        <select v-model= "preferedLanguage" class=" form-control btn3">
+                            <option value="option1">Option1</option>
+                             <option value="option2">Option2</option>
+                        </select>
+                        <span v-if ="!$v.preferedLanguage.required && $v.preferedLanguage.$dirty" class="text-danger">This field is required</span>
                     </div>
                 </div>
             </div>
@@ -177,9 +176,10 @@
             </div>
 
     </div>
-    </form>
-    <span class="document-next">NEXT</span>
+      <input type="submit" class="document-next" value="NEXT">
     <span class="document-prev">Previous</span>
+    </form>
+  
     </div>
 
     <p class="paraFooter">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga cupiditate alias ipsum
@@ -190,15 +190,66 @@
 </template>
 
 <script>
+import { required, minLength, maxLength, email} from 'vuelidate/lib/validators'
 export default {
-  name: 'Address Contact',
+  name: 'AddressContact',
   props: {
     msg: String
-  }
+  },
+  data:()=>({
+      name:'',
+      deliveryPeriod:'',
+      phoneNumber:'',
+      emailAddress:'',
+      preferedLanguage:''
+  }),
+  validations:{
+      name:{
+          required,
+         
+        //   alpha
+          },
+     deliveryPeriod:{
+           required,
+        //    alpha
+           },
+     phoneNumber:{
+          required,
+          minLength : minLength(3),
+          maxLength : maxLength(5)
+      },
+       emailAddress:{
+          required,
+          email 
+       },
+       preferedLanguage:{
+           required
+       }
+  },
+   methods: {
+   submitForm(){
+       this.$v.$touch()
+       if (this.$v.$invalid) {
+           console.log()
+      } 
+   }
+   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+select{
+    width:100%;
+    height:50px;
 
+}
+option{
+    color:black;
+    widows: 50%;
+}
+.form-control:focus{
+    border-color:transparent;
+    box-shadow: none;
+}
 </style>

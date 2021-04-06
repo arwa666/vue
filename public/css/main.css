@@ -261,12 +261,12 @@ html, body {
 }
 
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button ,field{
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="number"] {
+input[type="number"],field {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -310,14 +310,14 @@ input[type="number"] {
     margin-bottom: 12px;
   }
 }
-.documents .document-content form input {
+.documents .document-content form input,field {
   border: 1px solid #bdbdbd;
   height: 50px;
   outline: none;
   padding-inline-start: 10px;
   border-radius: 5px;
 }
-.documents .document-content form input:focus {
+.documents .document-content form input:focus, field:focus {
   outline: none;
 }
 .documents .document-content form div p {
@@ -345,7 +345,7 @@ input[type="number"] {
     width: 45%;
   }
 }
-.documents .document-content form div:first-child input {
+.documents .document-content form div:first-child input,field {
   width: 100%;
   border-radius: 5px;
 }
@@ -662,7 +662,7 @@ input[type="number"] {
 }
 .delivery .delivery-content form input[type="text"],
 .delivery .delivery-content form input[type="number"],
-.delivery .delivery-content form input[type="email"] {
+.delivery .delivery-content form input[type="email"],field {
   height: 50px;
   outline: none;
   border: 1px solid #bdbdbd;
