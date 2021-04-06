@@ -132,9 +132,9 @@ export default {
        this.$v.$touch()
        if (this.$v.$invalid) {
            console.log("disabled is true")
-           this.disabled = true
-      } else{
            this.disabled = false
+      } else{
+           this.disabled = true
       }
       console.log("I am clicked")
    }

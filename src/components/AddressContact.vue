@@ -176,7 +176,17 @@
             </div>
 
     </div>
-      <input type="submit" class="document-next" value="NEXT">
+     
+    <router-link
+         to='/conformation'
+          class="document-next" 
+           @click.native = "submitForm"
+           :disabled="!disabled" 
+           :event="disabled ? 'click' : ''"
+            >
+           NEXT
+    </router-link>
+   
     <span class="document-prev">Previous</span>
     </form>
   
@@ -201,7 +211,8 @@ export default {
       deliveryPeriod:'',
       phoneNumber:'',
       emailAddress:'',
-      preferedLanguage:''
+      preferedLanguage:'',
+      disabled: false
   }),
   validations:{
       name:{
@@ -230,8 +241,12 @@ export default {
    submitForm(){
        this.$v.$touch()
        if (this.$v.$invalid) {
-           console.log()
-      } 
+           console.log("disabled is true")
+           this.disabled = false
+      } else{
+          this.disabled =true
+           console.log("disabled is false")
+      }
    }
    }
 }
